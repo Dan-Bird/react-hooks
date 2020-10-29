@@ -6,7 +6,7 @@ const themeObj = {
   dark: { syntax: '#ddd', ui: '#333', bg: '#555' },
 };
 
-const ThemeContext = createContext(themeObj);
+export const ThemeContext = createContext(themeObj);
 
 const ThemeContextProvider = ({ children }) => {
   const [theme] = useState(themeObj);
