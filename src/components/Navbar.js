@@ -8,7 +8,7 @@ const Navbar = () => {
   const theme = isLightTheme ? light : dark;
 
   return (
-    <nav style={{ backgroundColor: theme.bg, color: theme.syntax }}>
+    <nav style={{ backgroundColor: theme.ui, color: theme.syntax }}>
       <h1>Context App</h1>
       <ul>
         <li>Home</li>
