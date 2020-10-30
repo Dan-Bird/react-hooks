@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import { actionTypes } from '../reducers/actionTypes';
 
@@ -6,6 +6,8 @@ const BookForm = () => {
   const { dispatch } = useContext(BookContext);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+
+  const bookTitleRef = useRef(null);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -16,6 +18,7 @@ const BookForm = () => {
         author,
       },
     });
+    bookTitleRef.current.focus();
     setTitle('');
     setAuthor('');
   };
@@ -23,9 +26,10 @@ const BookForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        ref={bookTitleRef}
         type="text"
         name="book-title"
-        id=""
+        id="book-title"
         placeholder="Book title"
         value={title}
         onChange={e => setTitle(e.target.value)}
@@ -34,7 +38,7 @@ const BookForm = () => {
       <input
         type="text"
         name="book-author"
-        id=""
+        id="book-author"
         placeholder="Book author"
         value={author}
         onChange={e => setAuthor(e.target.value)}
