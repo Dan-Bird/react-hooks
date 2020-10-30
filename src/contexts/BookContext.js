@@ -3,8 +3,13 @@ import { BookReducer } from '../reducers/BookReducer';
 
 export const BookContext = createContext();
 
+const initState = () => {
+  const storedBooks = localStorage.getItem('books');
+  return storedBooks ? JSON.parse(storedBooks) : [];
+};
+
 const BookContextProvider = ({ children }) => {
-  const [books, dispatch] = useReducer(BookReducer, []);
+  const [books, dispatch] = useReducer(BookReducer, [], initState);
 
   useEffect(() => {
     localStorage.setItem('books', JSON.stringify(books));
