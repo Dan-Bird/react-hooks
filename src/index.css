@@ -5,19 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #553055;
+  background: #faf8f0;
 }
 .App {
-  background: #4c2a4c;
+  background: #cfecf5;
   margin: 20px auto;
   width: 90%;
   max-width: 700px;
-  color: #eee;
+  color: #0a78b2;
 }
 .navbar {
   padding: 10px 20px;
   text-align: center;
-  background: #6d3d6d;
+  background: #a9e2f5;
 }
 .navbar h1 {
   margin: 10px 0;
@@ -32,24 +32,23 @@ body {
   list-style-type: none;
 }
 .book-list li {
-  background: #6d3d6d;
+  background: #a9e2f5;
   border-radius: 4px;
   padding: 10px;
   cursor: pointer;
   margin: 10px 0;
+  color: #0a78b2;
 }
 .book-list li:hover {
-  opacity: 0.7;
+  opacity: 0.9;
   text-decoration: line-through;
 }
 .book-list .title {
   font-weight: bold;
-  color: #fff;
   font-size: 1.2em;
 }
 .book-list .author {
   font-size: 0.9em;
-  color: #ddd;
 }
 .empty {
   margin: 20px;
@@ -64,14 +63,27 @@ input[type='text'] {
   padding: 10px;
   box-sizing: border-box;
   margin: 6px 0;
-  background: #3c1f3c;
-  color: #fff;
+  background: #faf8f0;
   border: 0;
+  border-radius: 2px;
 }
-input[type='submit'] {
-  margin: 10px auto;
-  background: #eee;
-  border: 0;
-  padding: 6px 20px;
-  display: block;
+input[type='text']::placeholder {
+  color: #2e779e;
+}
+
+button[type='submit'] {
+  background-color: #f1e1c9;
+  border: 2px solid hsl(42 59% 75% / 1);
+  padding: 10px 20px;
+  margin-top: 6px;
+  color: hsl(34 96% 28% / 1);
+  border-radius: 2px;
+}
+
+input[type='text']:focus,
+button[type='submit']:focus {
+  outline-color: #f1e1c9;
+  outline-width: medium;
+  outline-style: solid;
+  box-shadow: 0px 5px 7px rgb(10 110 169 / 30%);
 }
